@@ -1,4 +1,4 @@
-"""todolist URL Configuration
+"""todolist_project URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/4.1/topics/http/urls/
@@ -14,9 +14,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path
+from todolist_app import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('todo/', include('todo.urls')),
+    path('todos/', views.todo_list, name='todo_list'),
+    path('add/', views.add_todo, name='add_todo'),
 ]
